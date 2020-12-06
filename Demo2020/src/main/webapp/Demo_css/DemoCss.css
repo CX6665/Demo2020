@@ -1,0 +1,166 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.login-box{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background: #00000080;
+    padding: 130px 70px;
+}
+.title{
+    position: relative;
+    text-align: center;
+    color:#fff;
+    bottom: 50px;
+    text-transform: uppercase;
+}
+.input-box input{
+    background: none;
+    outline: none;
+    border: #8abdff 2px solid;
+    border-radius:30px;
+    padding:5px 20px;
+    margin-top:8px;
+    font-size :15px;
+    text-align: center;
+    color:#fff;
+    transition: .3s
+}
+.input-box input:hover{
+    border: #1d7dff 2px solid;
+
+}
+.login-btn{
+    position:absolute;
+    font-size: 30px;
+    top: 10em;
+    color :#74b9ff;
+    text-transform: uppercase;
+    padding: 5px 8px;
+    overflow: hidden;
+    transition: .3s;
+    cursor: pointer;
+}
+.login-btn::before{
+    content:'';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom:2px;
+    width: 50%;
+    background: rgba(0,0,0,.05);
+
+}
+a span:nth-child(1){
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right,#260774,#1779ff);
+    animation: span1 2s linear infinite;
+}
+@keyframes span1{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+a span:nth-child(2){
+    position: absolute;
+    top: 0;
+    right:0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom,#260774,#1779ff);
+    animation: span2 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes span2{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+}
+a span:nth-child(3){
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to left,#260774,#1779ff);
+    animation: span3 2s linear infinite;
+}
+@keyframes span3{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+a span:nth-child(4){
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to top,#260774,#1779ff);
+    animation: span4 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes span4{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+a button{
+    border: none;
+    outline: none;
+    background: #00000000;
+    width: 100px;
+    height: 50px;
+    color:#fff;
+    text-transform: uppercase;
+}
+.login-btn:hover{
+    background: #1779ff;
+    color:#fff;
+}
+.login-btn:hover>a span{
+    background: none;
+}
+.iconfonts{
+    position: absolute;
+    right: 25px;
+    margin-top :55px;
+    color:#fff;
+    margin-left: 5px;
+    cursor: default;
+}
+.iconfonts i img{
+    height:20px;
+    width:20px;
+    border: #fff 2px solid;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all .2s;
+    cursor: pointer;
+}
+.iconfonts i img:hover{
+    border: #3498db 2px solid;
+    color:#1779ff;
+}
+
