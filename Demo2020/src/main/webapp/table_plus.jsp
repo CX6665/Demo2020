@@ -29,13 +29,11 @@
         <button class="layui-btn layui-btn-sm" lay-event="input">导入</button>
     </div>
 </script>
-
 <script>
     layui.use(['table', 'layer', 'form'], function () {
         const table = layui.table;
         const layer = layui.layer;
         const $ = layui.$;
-
         const tableIns = table.render({
             elem: '#student'
             , url: '/Demo2020/stu/all'

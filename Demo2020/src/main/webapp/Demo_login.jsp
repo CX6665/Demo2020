@@ -18,35 +18,41 @@
     <div class="title">
         <h1>login</h1>
     </div>
-    <a class="login-btn">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <button type="button" name="chkbtn" id="chkbtn"><h2>login</h2></button>
-    </a>
-    <div class="input-box">
-        <input type="text"  id="username" valie="" placeholder="Email or Username">
-    </div>
-    <div class="input-box">
-        <input type="password"  id="password" valie="" placeholder="password">
-    </div>
-    <script>
-        document.getElementById('chkbtn').addEventListener('click',function(){
-            var username=document.getElementById("username").value;
-            var password=document.getElementById("password").value;
-            if(username=='chenxin'&&password=='1839698CXcx'){
-                window.location.href='words_table.jsp';
-            }
-            else{alert('Sorry Getinto defult!')}
-        });
-    </script>
-    <div class="iconfonts">
-        <i><img src="Demo_img/QQ.jpg"></i>
-        <i><img src="Demo_img/Github.jpg"></i>
-        <i><img src="Demo_img/Eamil.jpg"></i>
-    </div>
+    <form action="loginServer" method="post">
+        <div class="input-box">
+            <input type="text"  name="username" placeholder="Email or Username">
+        </div>
+        <div class="input-box">
+            <input type="password" name="password" placeholder="password">
+        </div>
+        <a class="login-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <button type="submit" name="chkbtn" id="chkbtn"><h2>login</h2></button>
+        </a>
+        <div class="iconfonts">
+            <i><img src="Demo_img/QQ.jpg"></i>
+            <i><img src="Demo_img/Github.jpg"></i>
+            <i><img src="Demo_img/Eamil.jpg"></i>
+        </div>
+    </form>
 </div>
+<%--<script>--%>
+<%--    function checkFrom(){--%>
+<%--        var userName=document.getElementById("username").value;--%>
+<%--        var passWord=document.getElementById("password").value;--%>
+<%--        if(userName==null || userName==" "){--%>
+<%--            alert("用户名不能为空");--%>
+<%--            location.reload();--%>
+<%--        }--%>
+<%--        if(passWord==null || passWord==" "){--%>
+<%--            alert("密码不能为空");--%>
+<%--            location.reload();--%>
+<%--        }--%>
+<%--    }--%>
+<%--</script>--%>
 <%--记录访问次数--%>
 <%! int pageCount = 0;
     void addCount() {
