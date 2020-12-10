@@ -32,7 +32,8 @@ public class LoginServer extends HttpServlet{
                 //将输入的密码与数据库密码相比对，执行相应操作
                 if (password.equals(resultSet.getObject("password"))) {
                     resp.sendRedirect("success.jsp");
-                } else {
+                }
+                else {
                     resp.sendRedirect("failed.jsp");
                 }
             } else {

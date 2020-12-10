@@ -9,9 +9,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device_width,initial-scale=1.0">
+<%--    <link rel="stylesheet" href="layui/css/layui.css">--%>
+<%--    <meta name="viewport" content="width=device_width,initial-scale=1.0">--%>
     <link rel="stylesheet" href="Demo_css/DemoCss.css">
     <title>login</title>
+    <table class="layui-hide" ></table>
 </head>
 <body style="background: url(Demo_img/bg_img1.jpg);background-size: 100%">
 <div class="login-box">
@@ -30,15 +32,60 @@
             <span></span>
             <span></span>
             <span></span>
-            <button type="submit" name="chkbtn" id="chkbtn"><h2>login</h2></button>
+            <button type="submit" name="chkbtn"><h2>login</h2></button>
         </a>
-        <div class="iconfonts">
-            <i><img src="Demo_img/QQ.jpg"></i>
-            <i><img src="Demo_img/Github.jpg"></i>
-            <i><img src="Demo_img/Eamil.jpg"></i>
-        </div>
+
     </form>
+    <a class="login-btn" style="margin-left: 120px">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <button id="regist"><h2>Register</h2></button>
+    </a>
 </div>
+<script src="layui/layui.all.js"></script>
+<script src="layui/layui.js"></script>
+<script>
+    layui.use(['layer','jquery'], function () {
+        let $ = layui.$
+        ,layer = layui.layer;
+        $("#regist").on('click', function() {
+            layer.open({
+                type: 2,
+                content: 'user_add.jsp',
+                area: ['700px', '400px'],
+                btn: ['YES', "CANSER"],
+                yes: function (index, layero) {
+                    const iframeWindow = window['layui-layer-iframe' + index]
+                        , submitID = 'user-add-save'
+                        , submit = layero.find('iframe').contents().find('#' + submitID);
+                    //监听提交
+                    iframeWindow.layui.form.on('submit(' + submitID + ')', function (data) {
+                        const field = data.field; //获取提交的字段
+                        $.ajax({
+                            url: '/Demo2020/AddUsers',
+                            type: 'POST',
+                            data: JSON.stringify(field),
+                            success: function (res) {
+                                if (res.code === 200) {
+                                    layer.close(index);
+                                    layer.msg('Add Successfully');
+                                } else {
+                                    layer.msg('Add Failed');
+                                }
+                            },
+                            error: function (error) {
+                                layer.msg('Http error');
+                            }
+                        });
+                    });
+                    submit.trigger('click');
+                }
+            });
+        });
+    })
+</script>
 <%--<script>--%>
 <%--    function checkFrom(){--%>
 <%--        var userName=document.getElementById("username").value;--%>
